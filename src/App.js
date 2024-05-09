@@ -18,20 +18,28 @@ class App extends React.Component {
   };
 
   handerOnMouseOver(event) {
-    console.log(event.pageX);
+  
   }
+  haderOnchange = (event) => {
+    event.preventDefault();
+    console.log(this.state);
+    this.setState({
+      name: event.target.value,
+    });
+  };
+
+  handOnSubmit = (event) => {
+    event.preventDefault();
+    console.log(this.state);
+  };
   render() {
     return (
       <div>
         My name is {this.state.name} And I'm from {this.state.address}
-        <button onMouseOver={this.handerOnMouseOver}>Click Me</button>
-        <button
-          onClick={(event) => {
-            this.handerClick(event);
-          }}
-        >
-          Click Me OK
-        </button>
+        <form onSubmit={(event)=>this.handOnSubmit}>
+          <input type="text" onChange={(event) => this.haderOnchange(event)} />
+        </form>
+        <button>Click Me OK</button>
       </div>
     );
   }
