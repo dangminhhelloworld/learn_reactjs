@@ -1,10 +1,12 @@
 
 import React from "react";
+import UserInfo from "./UserInfo";
+import DisplayInfo from "./DisplayInfo";
 
 class MyComponents extends React.Component{
     //? JSX
 
-    render() {
+    render() {  
         /*   
         * chỉ lưu 1 thẻ div
         * viết js trong dâu //! {} ;
@@ -12,9 +14,11 @@ class MyComponents extends React.Component{
         
         */
         return (
-            <div> my fisrt Component
-                {Math.random()}
+          <div>
+                <UserInfo/>
+                <DisplayInfo name ="Dang minh2" age ="18"/>
             </div>
+            
         );
     }
 
