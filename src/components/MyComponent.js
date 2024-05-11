@@ -12,11 +12,11 @@ class MyComponent extends React.Component {
     ],
   };
   handleAddNewUser = (userObject) =>{
-    let listUsersClone =[...this.state.listUsers];
+  
     
-    // this.setState({
-    //   listUsers:[userObject,...this.state.listUsers]
-    // })
+    this.setState({
+      listUsers:[userObject,...this.state.listUsers]
+    })
   }
    //? JSX
   render() {
