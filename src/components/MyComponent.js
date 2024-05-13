@@ -3,7 +3,6 @@ import AddUserInfo from "./AddUserInfo";
 import DisplayInfo from "./DisplayInfo";
 
 class MyComponent extends React.Component {
- 
   state = {
     listUsers: [
       { id: 1, name: "Dang minh2", age: "16" },
@@ -11,14 +10,16 @@ class MyComponent extends React.Component {
       { id: 3, name: "Dang minh3", age: "39" },
     ],
   };
-  handleAddNewUser = (userObject) =>{
-  
-    
+  handleAddNewUser = (userObject) => {
     this.setState({
-      listUsers:[userObject,...this.state.listUsers]
-    })
+
+      listUsers: [userObject, ...this.state.listUsers],
+    });
+  };
+  handleDeleteNewUser = (userId) =>{
+    let listUsersClone =[...this.state.listUsers]
   }
-   //? JSX
+  //? JSX
   render() {
     /*   
         * chỉ lưu 1 thẻ div
@@ -28,15 +29,15 @@ class MyComponent extends React.Component {
         */
     //!DRY: don't repeat yourseft
     return (
-      <div>
-       <AddUserInfo handleAddNewUser={this.handleAddNewUser}
-        
-       />
-        <br />
-        <DisplayInfo listUsers={this.state.listUsers}
-       
-         />
-      </div>
+     <>
+        <div className="a">
+          <AddUserInfo handleAddNewUser={this.handleAddNewUser} />
+          <br />
+          <DisplayInfo listUsers={this.state.listUsers}
+          handleDeleteNewUser={this.handleDeleteNewUser} />
+        </div>
+        <div className="b"></div>
+     </>
     );
   }
 }
