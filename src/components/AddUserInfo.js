@@ -1,49 +1,5 @@
-import React, { useState } from "react";
-// class AddUserInfo extends React.Component {
-//   state = {
-//     name: "minh",
-//     age: 19,
-//     address: "Hoa Binh",
-//   };
-//   handleOnChangeInput = (event) => {
-//     this.setState({ name: event.target.value });
-//   };
-//   handleOnChangeAge = (event) => {
-//     this.setState({ age: event.target.value });
-//   };
+import React, { useEffect, useState } from "react";
 
-//   handleOnSubmit =(event) =>{
-//     event.preventDefault();
-//     this.props.handleAddNewUser({
-//       id :Math.floor((Math.random() * 100) + 1) + 'ramdom',
-//       name:name,
-//       age: this.state.age
-
-//     });
-//   }
-//   render() {
-//     return (
-//       <div>
-//         My name is {this.state.name} and I'm {this.state.age}
-//         <form onSubmit={(event) => this.handleOnSubmit(event)}>
-//           <label>Your name</label>
-//           <input
-//             value={this.state.name}
-//             type="text"
-//             onChange={(event) => this.handleOnChangeInput(event)}
-//           />
-//           <label>Your age</label>
-//           <input
-//             value={this.state.age}
-//             type="text"
-//             onChange={(event) => this.handleOnChangeAge(event)}
-//           />
-//           <button> Submit</button>
-//         </form>
-//       </div>
-//     );
-//   }
-// }
 const AddUserInfo = (props) => {
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
@@ -64,7 +20,12 @@ const AddUserInfo = (props) => {
       age: age,
     });
   };
-
+  useEffect(()=>{
+    setTimeout(() =>{
+      document.title = "Edit by Minh"
+    },3000)
+    console.log("call me ok");
+  },[]);
   return (
     <div>
       My name is {name} and I'm {age}
