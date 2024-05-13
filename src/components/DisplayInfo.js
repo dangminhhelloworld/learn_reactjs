@@ -56,7 +56,6 @@ const DisplayInfo = (props) => {
               <div>My age: {user.age}</div>
               <div>
                 <button onClick={() => props.handleDeleteNewUser(user.id)}>
-                  {" "}
                   Delete
                 </button>
               </div>
